@@ -1,0 +1,57 @@
+
+
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Amelie</title>
+</head>
+<body>
+	<div>
+		<div style="width: 70%; wheight: 100%">List of available
+			resources within FIESTA-IoT</div>
+		<select id="inject-resource-select" style="width: 100%; wheight: 100%">
+			<option value="1">Thermometer</option>
+			<option value="2">Humidity Sensor</option>
+			<option value="3">Wind Speed Sensor</option>
+			<option value="4">Sound Sensor</option>
+			<option value="5">Air Thermometer</option>
+			<option value="6">Solar Radiation Sensor</option>
+			<option value="10">Voltage Sensor</option>
+			<option value="12">Atmospheric Pressure Sensor</option>
+			<option value="15">Light Sensor</option>
+			<option value="20">Carbon Monoxide (CO) Sensor</option>
+			<option value="30">Presence Detector</option>
+			<option value="0">Nitrogen Dioxide (NO2) Sensor</option>
+		</select>
+	</div>
+	
+
+</body>
+
+</html>
+
+<script type="text/javascript">
+
+    document.body.onload = function(){
+		var newSelection = '';
+		var queryStr = window.location.search;
+		var firstParamPairs = queryStr.substr(1).split('?');
+		console.log(firstParamPairs);
+		//var paramPairs = queryStr.substr(1).split('&');
+		var parts = firstParamPairs[0].split('=');
+		newSelection = parts[1];
+		console.log(newSelection);
+		document.getElementById("inject-resource-select").value = newSelection;
+/* 		var params = {};
+		for (var i = 0; i < paramPairs.length; i++) {
+		    var parts = paramPairs[i].split('=');
+		    //params[parts[0]] = parts[1];
+		    newSelection = parts[1];
+		    console.log(newSelection);
+		} */
+		//​document.getElementById("inject-resource-select").value = newSelection;​​​​​​​​​​
+	}
+
+</script>
+
